@@ -1,12 +1,12 @@
 # cursorhold-timeout.nvim
 
-**This plugin is inspired by [FixCursorHold.nvim](https://github.com/antoinemadec/FixCursorHold.nvim) which is used to solve the performance bug in the earlier version of neovim**
+**This plugin is inspired by [FixCursorHold.nvim](https://github.com/antoinemadec/FixCursorHold.nvim) which is used to solve the performance bug in the earlier version of Neovim**
 
 ## Features
 The triggered time of auto-commands `CursorHold` and `CursorHoldI` is set by `updatetime` of vim's option.
 
 Some plugins like [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim) insert their callback function into `CursorHold` for frequent state updates. 
-However, it may cause performance issues if we tune `updatetime` to a small value because this option is also used for other purposes, such as the time interval of **saving swap file**.
+However, it may cause performance issues if we tune `updatetime` to a small value because this option is also used for other purposes, such as the waiting time of **saving swap file**. Check `:h updatetime` for more information.
 
 This plugin provides a way to set an independent timeout for `CursorHold` and `CursorHoldI` without changing `updatetime`.
 Unlike [FixCursorHold.nvim](https://github.com/antoinemadec/FixCursorHold.nvim), this plugin is completely written in Lua.
